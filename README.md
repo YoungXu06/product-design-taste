@@ -4,7 +4,9 @@
 >
 > 一个可复用的 Agent 技能：把「产品设计品味」变成可执行的主流程审查、文案精修、数字校验、克制视觉与验收标准。
 
-![Skill](https://img.shields.io/badge/type-Agent%20Skill-2f6f52) ![Format](https://img.shields.io/badge/format-SKILL.md-5b5b5b) ![License](https://img.shields.io/badge/license-MIT-8a6f4e)
+![Skill](https://img.shields.io/badge/type-Agent%20Skill-2f6f52) ![Format](https://img.shields.io/badge/format-SKILL.md-5b5b5b) ![License](https://img.shields.io/badge/license-MIT-8a6f4e) ![Based on](https://img.shields.io/badge/based%20on-%40HiTw93-1d1d1d)
+
+> 灵感与核心原则来自 **Tw93（[@HiTw93](https://x.com/HiTw93)）** 的 X 帖子：[How to use AI to design products that look good](https://x.com/HiTw93/status/2119060282752504023)（2026-11-07）。本仓库在其观点之上补做了工程化封装，详见 [来源与致谢](#来源与致谢)。
 
 ---
 
@@ -168,9 +170,18 @@ product-design-taste/
 
 ## 来源与致谢
 
-核心观点整理自一位前端产品工程师在 X 上关于「如何用 AI 做出不难看、好用的产品」的公开分享（11 条原则与「解决问题 > 易用 > 好看」的优先级）。原帖未提供作者署名与固定链接，因此本仓库不推断作者身份。
+本技能的核心观点来自 **Tw93（[@HiTw93](https://x.com/HiTw93)）** 于 2026-11-07 在 X 上发布的帖子：
 
-在原始观点之上补充的内容属于工程化扩展，并非原作者原话：证据化审查、P0/P1/P2 优先级、能力边界与未验证标注、工程回归要求、数据与安全例外、无障碍检查、验证矩阵与行为验收案例。
+> **People often ask me how to use AI to design products that look good and don't feel like AI slop**
+> —— [x.com/HiTw93/status/2119060282752504023](https://x.com/HiTw93/status/2119060282752504023)
+
+原帖以产品工程师视角给出「解决问题 > 易用 > 好看」的优先级，并列出 11 条让产品易用且不难看的原则：主流程可独立走通、文案像母语者说话、不过度解释、数字说清指代、克制重复确认、单强调色与暖灰、少量字号、少用斜体/等宽/全大写、组件一致与同心圆角、按最长译文布局、多轮不满意时给三个方向。本技能的原则清单直接整理自这 11 条。
+
+**感谢 Tw93 的公开分享。** 这套方法的价值在于把设计从「感觉」拉回到可逐条检查的具体动作，技能只是把它做成了可复用的执行流程。
+
+在原始观点之上补充的内容属于工程化扩展，并非原作者原话：证据化审查（证据 → 用户影响 → 最小修复 → 验收）、P0/P1/P2 优先级、能力边界与「未验证」标注、工程回归要求、数据与安全例外、无障碍检查、验证矩阵与 7 个行为验收案例。
+
+原帖文字版权归原作者所有；本仓库仅做整理与演绎，代码与文档采用下方的 MIT 许可。
 
 ## License
 
