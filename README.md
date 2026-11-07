@@ -69,7 +69,7 @@
 
 ## 安装
 
-技能就是一个文件夹：一个 `SKILL.md` 加按需加载的 `references/`。任选一种方式。
+技能就是一个文件夹：一个 `SKILL.md` 加按需加载的 `references/`。任选一种方式：手动装（方式一至三），或直接把仓库地址交给 Agent 让它自己装（方式四，最省事）。
 
 ### 方式一：复制到用户级技能目录（推荐，跨项目可用）
 
@@ -107,9 +107,47 @@ python3 scripts/package_skill.py product-design-taste .
 
 解压 `product-design-taste.zip` 后放到上述任一目录。压缩包结构与源码一致，可直接校验；适合分发给不熟悉 git 的同事。
 
-### 方式四：其他 Agent / CLI 工具
+### 方式四：其他 Agent / CLI 工具（让 Agent 自己拉取安装）
 
-`SKILL.md` 是纯 Markdown。Claude Code、Cursor、Codex 等工具可直接把 `SKILL.md` 内容作为项目规则或系统提示词加载；`references/` 由模型按需读取，以控制上下文占用。
+`SKILL.md` 是纯 Markdown，`references/` 全部是可按需读取的文档。因此**不需要手动下载**：把仓库地址丢给任意一个有 shell 与联网能力的 Agent，让它自己拉取、校验、安装。
+
+**① 通用一句话（装到个人技能目录，跨项目可用）**
+
+```
+请把 https://github.com/YoungXu06/product-design-taste 安装为我的个人 Agent 技能：
+1. 克隆或下载该仓库到临时目录；
+2. 把 product-design-taste/ 整个目录复制到 ~/.workbuddy/skills/product-design-taste；
+3. 校验 SKILL.md 与 references/ 下的 3 个文档都存在且非空，不要修改内容；
+4. 打印最终目录树，并告诉我以后用什么话触发它。
+如果网络被限制或目录不存在，直接说明失败原因，不要假装安装成功。
+```
+
+**② 装进当前项目（团队共享，随仓库提交）**
+
+```
+请从 https://github.com/YoungXu06/product-design-taste 拉取这个技能，
+装到当前项目的 .workbuddy/skills/product-design-taste/ 下，
+校验完成后把该目录加入 git 并提示我提交；不要改动项目其他文件。
+```
+
+**③ 只借用规则、不落盘（Claude Code / Cursor / Codex 等无原生技能目录的 CLI）**
+
+```
+读取 https://github.com/YoungXu06/product-design-taste 的 SKILL.md，
+在本轮对话中严格按它的判断顺序（解决问题 > 易用 > 好看）和 P0/P1/P2 优先级，
+审查我当前项目的界面。需要逐条细则时再读取 references/design-checklist.md，
+需要验收模板时读取 references/acceptance-and-output.md。
+```
+
+**④ 想让它长期生效（作为项目规则文件）**
+
+```
+把 https://github.com/YoungXu06/product-design-taste 的 SKILL.md 内容
+写入本项目的规则文件（如 CLAUDE.md / AGENTS.md / .cursor/rules），
+保留原有内容并在末尾追加一节，标题为 “产品设计与 UI 审查规范”。
+```
+
+> **提示：** 这类话术依赖 Agent 具备联网与 shell 权限。要求它打印目录树、校验文件存在，是为了防止「声称装好了但其实没装」。若只想临时试用，用 ③，不写入任何文件。
 
 ## 使用
 
